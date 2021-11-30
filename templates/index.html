@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Car Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Present_Price" placeholder="Present_Price (in lakhs)" required="required" /><br>
+      <input type="text" name="Kms_Driven" placeholder="Kilometres_Driven" required="required" /><br>
+        <input type="text" name="Fuel_Type_Petrol" placeholder="Fuel_Type" required="required" /><br>
+        <input type="text" name="Seller_Type_Individual" placeholder="Seller_Type" required="required" /><br>
+        <input type="text" name="Transmission_Manual" placeholder="Transmission" required="required" /><br>
+        <input type="text" name="Owner" placeholder="Owner" required="required" /><br>
+        <input type="text" name="Years_Used" placeholder="Years_Used" required="required" /><br>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
