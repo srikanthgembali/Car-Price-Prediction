@@ -8,13 +8,13 @@
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
   
 </head>
 
 <body>
  <div class="login">
-	<h1>Car Price Prediction</h1>
+	<h1 style="font-size:30px;">Car Price Prediction</h1>
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
@@ -31,10 +31,55 @@
 
    <br>
    <br>
-  
-   
+    
  </div>
- {{prediction_text}}
+	
+ <div
+   class ="output">
+ <h3>{{prediction_text}}</h3> 
+ </div>
+<style>
+.output{
+  text-align: center;
+}
+
+.login { 
+	position: absolute;
+	top: 40%;
+	left: 50%;
+  right: 50%;
+	margin: -150px 0 0 -150px;
+	width:400px;
+	height:400px;
+  float: right;
+}
+
+.login h1 { color: rgb(8, 8, 8); letter-spacing:1px; text-align:center; }
+
+input { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(245, 240, 240, 0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+}
+
+button{
+  position: relative;
+  text-align: center;
+  width: 50%; 
+  padding: 10px;
+	font-size: 18px;
+  background-color: rgb(65, 56, 187);
+}
+</style>
+
 
 </body>
 </html>
