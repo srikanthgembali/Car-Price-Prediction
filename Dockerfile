@@ -1,7 +1,6 @@
 FROM python:3.7
 
 ENV PORT 8080
-ENV HOST 127.0.0.1
 
 
 RUN apt-get update -y && \
