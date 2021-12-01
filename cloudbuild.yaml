@@ -12,7 +12,7 @@ steps:
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
-  - --filename=car-price-prediction/
+  - --filename=configs/
   - --image=gcr.io/$PROJECT_ID/myapp:v1
   - --location=asia-south1-a
   - --cluster=car-price-prediction
