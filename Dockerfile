@@ -1,8 +1,5 @@
 FROM python:3.7
 
-ENV PORT 8080
-
-
 RUN apt-get update -y && \
     apt-get install -y python3-pip
 
