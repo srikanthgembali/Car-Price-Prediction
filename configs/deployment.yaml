@@ -1,19 +1,19 @@
-apiVersion: apps/v2
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: price1
+  name: price
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: pricepredictions1
+      app: pricepredictions
   template:
     metadata:
       labels:
-        app: pricepredictions1
+        app: pricepredictions
     spec:
       containers:
       - name: nlp-app
-        image: gcr.io/car-price-prediction-27-11/myapp:v2
+        image: gcr.io/car-price-prediction-27-11/myapp:v1
         ports:
         - containerPort: 5000
