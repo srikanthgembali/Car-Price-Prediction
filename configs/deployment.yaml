@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v2
 kind: Deployment
 metadata:
   name: price
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: nlp-app
-        image: gcr.io/car-price-prediction-27-11/myapp:v1
+        image: gcr.io/car-price-prediction-27-11/myapp:v2
         ports:
         - containerPort: 5000
