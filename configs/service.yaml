@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pricepredictions
+  name: pricepredictions1
 spec:
   type: LoadBalancer
   selector:
-    app: pricepredictions
+    app: pricepredictions1
   ports:
   - port: 80
     targetPort: 5000
