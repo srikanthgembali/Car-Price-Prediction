@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: price1
+  name: price
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: pricepredictions1
+      app: pricepredictions
   template:
     metadata:
       labels:
-        app: pricepredictions1
+        app: pricepredictions
     spec:
       containers:
       - name: nlp-app
