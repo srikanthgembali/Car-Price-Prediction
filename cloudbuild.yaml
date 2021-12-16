@@ -1,18 +1,18 @@
 steps:
 #Build the image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/myapp:v1', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/myapp:v2', '.']
   timeout: 180s
 
 #Push the image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/myapp:v1']
+  args: ['push', 'gcr.io/$PROJECT_ID/myapp:v2']
 
 # deploy container image to GKE
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
   - --filename=configs/
-  - --image=gcr.io/$PROJECT_ID/myapp:v1
+  - --image=gcr.io/$PROJECT_ID/myapp:v2
   - --location=asia-south1-a
   - --cluster=car-price-prediction
